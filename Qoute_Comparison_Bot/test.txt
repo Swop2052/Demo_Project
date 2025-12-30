@@ -1,0 +1,29 @@
+--- Quote 1 ---
+Annual Premium (INR): 18000
+Sum Insured (INR): 1500000
+Deductible (INR): 5000
+
+--- Quote 2 ---
+Annual Premium (INR): 16000
+Sum Insured (INR): 800000
+Deductible (INR): 15000
+
+--- Quote 3 ---
+Annual Premium (INR): 22000
+Sum Insured (INR): 800000
+Deductible (INR): 15000
+
+Enter family size: 4
+
+Comparison & Recommendation Questions (System-Generated)
+
+Which quote offers the lowest annual premium (INR)?
+
+Which quote offers the highest sum insured (INR)?
+
+Which quote has the lowest deductible (INR)?
+
+Which policy provides the best overall value for money?
+
+Based on inputs, which quote is recommended and why?
+
