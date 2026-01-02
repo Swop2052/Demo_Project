@@ -27,6 +27,7 @@ Multi-Language Support	        English, Hindi, Marathi coverage
 Human-in-the-Loop	        Escalation paths for complex cases
 
 ## 📁 Project Structure
+''' Text
 Insurance-Claims-Intelligence/
 ├── app.py                    # Main Streamlit application
 ├── requirements.txt          # Python dependencies
@@ -38,7 +39,7 @@ Insurance-Claims-Intelligence/
 │   └── audit_logs.csv       # Governance-compliant logs
 │
 └── assets/                  # Static assets (if any)
-
+'''
 ## 🛠️ Tech Stack
 Component	     Technology	              Purpose
 Frontend	     Streamlit	       Rapid UI development with Python
