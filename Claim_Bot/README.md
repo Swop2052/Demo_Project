@@ -4,8 +4,7 @@
 ## 📋 Overview
 A production-grade GenAI application that transforms complex insurance claim documents into clear, explainable insights. Built for insurance companies, claims analysts, and policyholders, this platform delivers transparent, auditable, and governance-compliant claim decision explanations.
 
-Perfect For:
-
+## Perfect For:
 Internal claims review & customer support tools
 AI governance & compliance demonstrations
 Technical interviews & portfolio showcases
@@ -27,19 +26,19 @@ Multi-Language Support	        English, Hindi, Marathi coverage
 Human-in-the-Loop	        Escalation paths for complex cases
 
 ## 📁 Project Structure
-''' Text
+ ```text
 Insurance-Claims-Intelligence/
-├── app.py                    # Main Streamlit application
-├── requirements.txt          # Python dependencies
-├── README.md                 # This documentation
-├── .gitignore                # Git configuration
-├── .env.example              # Environment template
+├── app.py                    # 🚀 Main application - Single file architecture
+├── requirements.txt          # 📦 Python dependencies (just 6 packages)
+├── README.md                 # 📚 This documentation
+├── .gitignore                # 🔒 Git security config
+├── .env.example              # ⚙️ Environment template
 │
-├── logs/                    # Auto-generated audit logs
-│   └── audit_logs.csv       # Governance-compliant logs
+├── logs/                    # 📊 Auto-generated (gitignored)
+│   └── audit_logs.csv       # 🔍 Every interaction logged here
 │
-└── assets/                  # Static assets (if any)
-'''
+└── assets/                  # 🎨 Static files (optional)
+ ```
 ## 🛠️ Tech Stack
 Component	     Technology	              Purpose
 Frontend	     Streamlit	       Rapid UI development with Python
@@ -52,9 +51,7 @@ Logging	            CSV + Custom       Audit trail and governance
 ## ⚡ Quick Start
 Prerequisites
 Python 3.10+
-
 Azure OpenAI service access
-
 Git
 
 ## Installation Steps
