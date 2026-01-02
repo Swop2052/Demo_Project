@@ -57,25 +57,25 @@ Azure OpenAI service access
 Git
 
 ## Installation Steps
-# 1. Clone repository
+1. Clone repository
 git clone https://github.com/your-username/Insurance-Claims-Intelligence.git
 cd Insurance-Claims-Intelligence
 
-# 2. Set up virtual environment
+2. Set up virtual environment
 python -m venv venv
 
-# Linux/Mac
+Linux/Mac
 source venv/bin/activate
 
-# Windows
+Windows
 venv\Scripts\activate
 
-# 3. Install dependencies
+3. Install dependencies
 pip install -r requirements.txt
 
-# 4. Configure environment
+4. Configure environment
 cp .env.example .env
-# Edit .env with your Azure OpenAI credentials
+Edit .env with your Azure OpenAI credentials
 
 # 5. Launch application
 streamlit run app.py
