@@ -1,142 +1,104 @@
-1. Executive Summary
+# Underwriting Assistant: GenAI-Powered Decision Support System
 
-The Underwriting Assistant is a GenAI-powered decision-support system that assists insurance underwriters by extracting and synthesizing risk-relevant information from real underwriting documents (PDFs).
+## 1. Overview
+The Underwriting Assistant is an enterprise-grade, AI-enhanced decision-support platform designed for insurance professionals. It processes unstructured underwriting documents (PDFs) to extract, analyze, and present risk-relevant insights, enabling faster and more consistent risk assessments while ensuring human oversight remains central to all final decisions.
 
-The system leverages Azure OpenAI to perform contextual reasoning over unstructured documents and generates explainable, structured underwriting insights.
-It is explicitly designed as a co-pilot, ensuring that final underwriting authority remains with human experts.
+## 2. Business Context & Problem Statement
+Industry Challenges
+Underwriting decisions depend heavily on manual review of unstructured documents
 
-2. Business Context & Problem Statement
-Current Industry Challenges
+## Current processes are:
 
-Underwriting decisions rely heavily on unstructured documents
-
-Manual review processes are:
-
-Time-intensive
-
-Inconsistent across underwriters
-
-Difficult to audit at scale
-
+Time-intensive – hours spent per case on document review
+Inconsistent – variability across different underwriters
+Hard to audit – lack of structured, machine-readable audit trails
 Critical risk indicators are often buried across multiple PDFs
 
-Business Impact
-
+## Business Impact
 Increased underwriting turnaround time
+Higher operational costs due to manual effort
+Variable risk assessment quality
+Limited scalability of underwriting operations
 
-Higher operational costs
+## 3. System Architecture
+```text
+┌─────────────────┐
+│   User          │
+│  (Underwriter)  │
+└────────┬────────┘
+         │
+         ▼
+┌─────────────────┐
+│  PDF Upload     │
+│  (Proposal / Claims │
+│   / External Reports)│
+└────────┬────────┘
+         │
+         ▼
+┌─────────────────┐
+│  PDF Text       │
+│  Extraction Layer│
+└────────┬────────┘
+         │
+         ▼
+┌─────────────────┐
+│  Risk-Relevant  │
+│  Content        │
+│  Aggregation    │
+└────────┬────────┘
+         │
+         ▼
+┌─────────────────┐
+│  Azure OpenAI   │
+│  (LLM Reasoning │
+│   Engine)       │
+└────────┬────────┘
+         │
+         ▼
+┌─────────────────┐
+│  Structured Risk│
+│  Assessment     │
+│  (JSON Output)  │
+└────────┬────────┘
+         │
+         ▼
+┌─────────────────┐
+│  Human Review   │
+│  & Final Decision│
+└─────────────────┘
+```
 
-Variability in risk assessment
+## 4. Core Capabilities
+## Feature	                   ##Description
+📄 PDF-Based Workflow	       Industry-realistic document processing pipeline
+🧠 Contextual Risk Reasoning	 GenAI-powered analysis of document context
+📊 Risk Scoring	Qualitative  scoring with detailed explanations
+🧾 Structured JSON Output	 Validated, machine-consumable results
+🛡️ Enterprise Guardrails	 Built-in safety and compliance controls
+🔁 Extensible Design	       Modular architecture for easy enhancement
 
-Reduced ability to scale underwriting operations
-
-3. Product Vision & Design Principles
-Product Vision
-
-To provide underwriters with a trusted AI co-pilot that:
-
-Reduces document review effort
-
-Improves risk visibility
-
-Enhances consistency
-
-Maintains regulatory and ethical integrity
-
-Core Design Principles
-
-Explainability First – Every output must be justified
-
-Human-in-the-Loop – AI assists, humans decide
-
-Structured Outputs – Audit-ready, machine-consumable
-
-Enterprise Alignment – Built with regulated environments in mind
-
-4. Functional Capabilities
-
-📄 PDF-based underwriting workflow (industry-realistic)
-
-🧠 Contextual risk reasoning using GenAI
-
-📊 Risk scoring with qualitative explanations
-
-🧾 Structured JSON output with schema validation
-
-🛡️ Guardrails to prevent unsafe automation
-
-🔁 Easily extensible for enterprise enhancements
-
-5. End-to-End System Architecture
-User (Underwriter)
-      ↓
-PDF Upload (Proposal / Claims / External Reports)
-      ↓
-PDF Text Extraction Layer
-      ↓
-Risk-Relevant Content Aggregation
-      ↓
-Azure OpenAI (LLM Reasoning Engine)
-      ↓
-Structured Risk Assessment (JSON)
-      ↓
-Human Review & Final Decision
-
-6. Data Flow & Processing Logic
-
-User uploads underwriting-related PDFs
-
-System extracts raw text from documents
-
-Extracted content is consolidated into a risk context
-
-LLM performs:
-
-Risk signal identification
-
-Contextual reasoning
-
-Risk scoring
-
-Output is validated against a strict schema
-
-Results are presented for underwriter review
-
-7. AI Reasoning & Guardrails
+## 5. AI Reasoning & Safety Controls
 AI Responsibilities
+Identify underwriting risk signals across documents
+Summarize applicant risk profile holistically
+Assign qualitative risk levels (Low/Medium/High)
+Provide transparent, document-referenced explanations
 
-Identify underwriting risk signals
-
-Summarize applicant risk profile
-
-Assign a qualitative risk level
-
-Provide transparent explanations
-
-Explicit Guardrails
-
+## Explicit Guardrails
 ❌ No automated approvals or rejections
-
 ❌ No pricing or actuarial decisions
+✅ JSON-only structured outputs (no free-form decisions)
+✅ Conservative reasoning approach
+✅ Deterministic inference (low variance for consistency)
 
-✅ JSON-only structured outputs
-
-✅ Conservative, explainable reasoning
-
-✅ Deterministic inference (low variance)
-
-These controls align with regulated insurance environments.
-
-8. Input & Output Specifications
-Input Documents
-
+## 6. Input/Output Specifications
+Supported Input Documents
 Applicant Proposal PDF
-
 Claims History PDF
+External Risk/Credit Report PDF (Optional)
 
-External Risk / Credit Report PDF (Optional)
-
-Output Schema
+## Output Schema
+```text
 {
   "risk_level": "Medium",
   "risk_score": 62,
@@ -148,123 +110,100 @@ Output Schema
   "underwriting_summary": "The applicant presents moderate underwriting risk primarily driven by claims history.",
   "recommendation": "Proceed with detailed manual review"
 }
+```
 
-
-9. Technology Stack
+## 7. Technology Stack
 Presentation Layer
-
-Streamlit – Rapid UI for POC and demos
+Streamlit – Rapid UI for POC and demonstration
 
 Application & Logic
-
-Python
-
-pdfplumber (PDF text extraction)
-
-Pydantic (schema validation)
+Python – Core application logic
+pdfplumber – PDF text extraction
+Pydantic – Schema validation and data modeling
 
 AI & Intelligence
-
-Azure OpenAI
-
-Prompt-engineered LLM workflows
-
-Deterministic generation for consistency
+Azure OpenAI – LLM reasoning engine
+Prompt Engineering – Domain-specific optimization
+Deterministic Generation – Consistent outputs
 
 Configuration & Security
-
 Environment variables (.env)
-
-Git-ignored secrets
-
+Git-ignored secrets management
 Modular, maintainable codebase
 
-10. Repository Structure
+## 8. Repository Structure
+```text
 underwriting-assistant-pdf/
 │
-├── app.py                # Streamlit UI
-├── underwriting_ai.py    # Azure OpenAI integration
-├── pdf_utils.py          # PDF extraction utilities
-├── schemas.py            # Output schema validation
-├── requirements.txt
-├── .env                  # Environment configuration (excluded)
-└── .gitignore
+├── app.py                 # Streamlit UI and application flow
+├── underwriting_ai.py     # Azure OpenAI integration and reasoning
+├── pdf_utils.py           # PDF extraction and text processing
+├── schemas.py             # Pydantic models for output validation
+├── requirements.txt       # Python dependencies
+├── .env                   # Environment configuration (git-ignored)
+└── .gitignore            # Security and environment exclusions
+```
+## 9. Installation & Setup
+Prerequisites
+Python 3.9+
+Azure OpenAI resource with GPT-4 deployment
+Valid API credentials
 
-11. Installation & Configuration
-Environment Setup
+## Installation Steps
+```text
+# Clone repository
+git clone <repository-url>
+cd underwriting-assistant-pdf
+
+# Install dependencies
 pip install -r requirements.txt
 
-Environment Variables
-AZURE_OPENAI_API_KEY=***
-AZURE_OPENAI_ENDPOINT=https://<resource>.openai.azure.com/
-AZURE_OPENAI_API_VERSION=2024-02-15-preview
-AZURE_OPENAI_DEPLOYMENT=gpt-4o
+# Configure environment
+cp .env.example .env
+# Edit .env with your Azure OpenAI credentials
+```
+## 10. Usage Workflow
+Launch Application
+```text
+streamlit run app.py
+```
+## Upload Documents
+Drag and drop underwriting-related PDFs
+Supported: Proposals, Claims History, Risk Reports
 
-12. Usage Workflow
+## Initiate Analysis
+Click "Assess Risk" to process documents
+System extracts text and runs AI reasoning
 
-Launch application
+## Review Results
+Examine structured risk assessment
+Review key risk factors and explanations
 
-Upload underwriting-related PDFs
+## Make Decision
+Use AI insights to inform manual review
+Maintain final underwriting authority
 
-Initiate risk assessment
+## Note: 
+This system is intentionally designed to reflect real-world underwriting workflows, regulatory constraints, and enterprise AI best practices. It serves as both a functional tool and a reference implementation for responsible GenAI adoption in regulated industrie
 
-Review structured AI output
 
-Make final underwriting decision
 
-13. Security & Compliance Considerations
 
-No sensitive data hardcoded
 
-No automated decision-making
 
-Outputs are auditable and explainable
 
-Designed for controlled internal use
 
-Ready for integration with IAM and logging systems
 
-14. Limitations & Assumptions
 
-Assumes text-based PDFs (OCR not included)
 
-Not a fraud detection engine
 
-Not an actuarial pricing model
 
-Intended as a decision-support tool only
 
-15. Roadmap & Future Enhancements
 
-OCR support for scanned documents
 
-Vector similarity search for historical cases
 
-Human feedback loop learning
 
-Fraud signal correlation
 
-Audit logging & traceability
 
-Role-based access control
 
-Policy-type-specific reasoning
 
-16. Interview & Evaluation Notes
-How to Position This Project
-
-“This system demonstrates how GenAI can be responsibly applied to underwriting by assisting risk assessment through document intelligence while maintaining explainability and regulatory alignment.”
-
-What This Project Demonstrates
-
-Insurance domain understanding
-
-GenAI system design
-
-Responsible AI implementation
-
-Enterprise architectural thinking
-
-Final Statement
-
-This project is intentionally designed to reflect real-world underwriting workflows, regulatory constraints, and enterprise AI best practices.
