@@ -64,11 +64,11 @@ cd Insurance-Claims-Intelligence
 2. Set up virtual environment
 python -m venv venv
 
-Linux/Mac
-source venv/bin/activate
+ Linux/Mac
+ source venv/bin/activate
 
-Windows
-venv\Scripts\activate
+ Windows
+ venv\Scripts\activate
 
 3. Install dependencies
 pip install -r requirements.txt
