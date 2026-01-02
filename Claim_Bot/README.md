@@ -54,6 +54,7 @@ Python 3.10+
 Azure OpenAI service access
 Git
 
+```text
 ## Installation Steps
 1. Clone repository
 git clone https://github.com/your-username/Insurance-Claims-Intelligence.git
@@ -77,7 +78,7 @@ Edit .env with your Azure OpenAI credentials
 
 # 5. Launch application
 streamlit run app.py
-
+```
 ## 🌐 Language Support
 Primary: English (full feature set)
 
