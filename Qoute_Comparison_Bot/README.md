@@ -1,107 +1,50 @@
-🛡️ Insurance Quote Comparison Chatbot
-
+# 🛡️ Insurance Quote Comparison Chatbot
 AI-Powered Insurance Quote Intelligence Platform
 
-📌 Project Overview
+## 📌 Overview
+The Insurance Quote Comparison Chatbot is an AI-driven application that analyzes, compares, and explains insurance quotes using structured data extraction, document intelligence, and Large Language Models (LLMs). Designed as a proof-of-concept (PoC), it mirrors real-world insurance underwriting and advisory workflows by enabling users to upload multiple insurance quote PDFs, extract key financial parameters, and receive:
 
-The Insurance Quote Comparison Chatbot is an AI-driven application designed to analyze, compare, and explain insurance quotes using structured data extraction, document intelligence, and Large Language Models (LLMs).
-
-This platform enables users to upload multiple insurance quote PDFs, extract key financial parameters, and receive:
-
-A side-by-side comparison
-
-An AI-recommended best quote
-
+A side-by-side comparison of quotes
+An AI-recommended best quote based on configurable preferences
 Natural-language explanations tailored to user questions
 
-The solution is built as a proof-of-concept (PoC) that closely mirrors real-world insurance underwriting and advisory workflows.
-
-🎯 Problem Statement
-
-Insurance quotes are often:
-
-Complex
-
-Inconsistent across insurers
-
-Difficult for customers to interpret
-
-Users struggle to understand:
-
+## 🎯 Problem Statement
+Insurance quotes are often complex, inconsistent across insurers, and difficult for customers to interpret. Users struggle to understand:-
 Which quote offers better value
-
 Trade-offs between premium, coverage, and deductible
-
 Hidden implications within policy documents
 
-This project solves that gap by:
+This solution bridges that gap by:-
 
 Structuring unstructured insurance PDFs
-
 Standardizing comparison metrics
-
 Using AI to explain decisions transparently
 
-🚀 Key Features
-✅ Quote Comparison Engine
+## 🚀 Key Features
+## Feature	                                  ## Description
+Quote Comparison Engine	                  Supports multiple insurance quotes; extracts and compares Sum Insured, Annual Premium, Deductible,                                                       and normalizes values for fair evaluation
 
-Supports multiple insurance quotes
+PDF Intelligence (RAG)	                   Reads real insurance quote documents using Retrieval-Augmented Generation (RAG) with ChromaDB; ensures answers                                           are grounded in actual policy text
 
-Extracts and compares:
+AI Chatbot (Explainability Layer)	        Accepts natural questions (e.g., “Which quote is best for low deductible?”); responds using policy-aware                                                 reasoning
 
-Sum Insured
+Memory-Aware Conversations	              Retains context across user interactions; enables follow-up questions without re-uploading data
 
-Annual Premium
+Audit & Logging	                          Timestamped logs for user actions and AI responses; supports compliance and traceability
 
-Deductible
+## 🧠 Architecture
+```text
+graph TD
+    A[User Uploads PDFs] --> B[PDF Parser (pdfplumber)]
+    B --> C[Structured Quote Extraction]
+    C --> D[Comparison Logic Engine]
+    D --> E[RAG (ChromaDB) Retrieval]
+    E --> F[Azure OpenAI LLM]
+    F --> G[Chatbot Explanation]
+```
 
-Normalizes values for fair evaluation
-
-✅ PDF Intelligence (RAG)
-
-Reads real insurance quote documents
-
-Uses Retrieval-Augmented Generation (RAG) with ChromaDB
-
-Ensures answers are grounded in actual policy text
-
-✅ AI Chatbot (Explainability Layer)
-
-Ask natural questions such as:
-
-“Which quote is best for low deductible?”
-
-“Why is Quote B cheaper?”
-
-AI responds using policy-aware reasoning
-
-✅ Memory-Aware Conversations
-
-Retains context across user interactions
-
-Enables follow-up questions without re-uploading data
-
-✅ Audit & Logging
-
-Timestamped logs for:
-
-User actions
-
-AI responses
-
-Supports compliance and traceability
-
-🧠 Architecture Overview
-User
- └── Upload Insurance PDFs
-      └── PDF Parser (pdfplumber)
-           └── Structured Quote Extraction
-                └── Comparison Logic
-                     └── RAG (ChromaDB)
-                          └── Azure OpenAI (LLM)
-                               └── Chatbot Explanation
-
-🗂️ Project Structure
+## 🗂️ Project Structure
+```text
 Qoute_Comparison_Bot/
 │
 ├── main.py                     # Application entry point
@@ -127,100 +70,62 @@ Qoute_Comparison_Bot/
 ├── .env                        # Environment variables (not committed)
 ├── .gitignore
 └── README.md
+```
 
-🧾 Comparison Parameters (Industry-Relevant)
-Parameter	Description
-Annual Premium	Yearly cost paid by the customer
-Sum Insured	Maximum claim payout
-Deductible	Amount paid by user before insurer pays
-Value Score	AI-derived score balancing cost vs coverage
-Risk Notes	AI explanation of trade-offs
-🔐 Environment Configuration
+## 🧾 Comparison Parameters (Industry-Relevant)
+## Parameter	                ## Description
+Annual Premium	              Yearly cost paid by the customer
+Sum Insured	                 Maximum claim payout
+Deductible	                  Amount paid by user before insurer pays
+Value Score	                 AI-derived score balancing cost vs coverage
+Risk Notes	                  AI explanation of trade-offs
 
-Create a .env file in the root directory:
+## 🔐 Environment Configuration
+Create a .env file in the root directory with the following
 
-AZURE_OPENAI_API_KEY=your_api_key
-AZURE_OPENAI_ENDPOINT=https://your-endpoint.openai.azure.com/
-AZURE_OPENAI_API_VERSION=2024-02-15-preview
-AZURE_OPENAI_DEPLOYMENT=your-deployment-name
+## 🧪 Getting Started
 
-
-⚠️ Never commit .env files to GitHub.
-
-🧪 How to Run the Project
-1️⃣ Clone the Repository
+1️ Clone the Repository
+bash
 git clone https://github.com/your-username/Insurance-Quote-Comparison.git
 cd Qoute_Comparison_Bot
-
-2️⃣ Create Virtual Environment
+2️ Create Virtual Environment
+bash
 python -m venv venv
+On Windows:
 venv\Scripts\activate
-
-3️⃣ Install Dependencies
+On macOS/Linux:
+source venv/bin/activate
+3️ Install Dependencies
+bash
 pip install -r requirements.txt
-
-4️⃣ Run the Application
+4️ Run the Application
+bash
 python main.py
 
-📊 Use Case Scenarios
+## 🛡️ Guardrails & Safety
+Responses are grounded in retrieved policy text (RAG) to minimize hallucinations
+All user and AI interactions are logged for traceability
+Explicit disclaimers are provided (AI ≠ licensed insurance advisor)
 
-Insurance advisors comparing plans for customers
-
-Customers evaluating multiple policy offers
-
-Underwriting PoC demonstrations
-
-AI explainability showcase for interviews
-
-🛡️ Guardrails & Safety
-
-Responses grounded in retrieved policy text (RAG)
-
-No hallucinated policy details
-
-Logged interactions for traceability
-
-Explicit disclaimers (AI ≠ licensed advisor)
-
-📈 Project Status
-
-✅ Proof-of-Concept (PoC)
-🚧 Not production-ready
-
-Production Enhancements Needed:
-
-Authentication & role-based access
-
-Secure document storage
-
-Policy versioning
-
-Regulatory compliance checks (IRDAI, GDPR)
-
-UI enhancements
-
-🎯 Interview & Resume Value
-
-This project demonstrates:
-
-Applied GenAI (LLMs + RAG)
-
-Real-world insurance domain understanding
-
-Explainable AI
-
-End-to-end system design
-
-Enterprise-style project structuring
-
-Highly suitable for AI, Data, and GenAI interviews.
-
-📌 Disclaimer
-
+## Disclaimer
 This project is for educational and demonstration purposes only.
-It does not provide financial or insurance advice.
+It does not provide financial or insurance advice. Always consult a licensed professional for insurance decisions.
 
-👤 Author
 
-Swapnil Ingle
-AI / GenAI Project Portfolio
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
