@@ -62,7 +62,7 @@ Demo_Project/
 ```
 ## System Comparison Matrix
 ```text
-Feature	                Underwriting Assistant	                 Claims Assistant	                     Insurtech AI Agent
+## Feature	              ## Underwriting Assistant	               ##  Claims Assistant	                    ## Insurtech AI Agent
 Primary Focus       	Risk Assessment & Document Analysis        Fraud Detection & Claims Routing	     Multi-Agent Customer Service
 Core Technology	      Azure OpenAI + PDF Processing	             NLP + Rule Engine + ML	               Multi-Agent Framework + RAG
 Key Output	          Structured Risk Assessment	               Fraud Score & Routing Decision	       Conversational Responses
