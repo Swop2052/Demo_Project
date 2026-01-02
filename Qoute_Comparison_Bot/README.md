@@ -84,11 +84,12 @@ Risk Notes	                  AI explanation of trade-offs
 Create a .env file in the root directory with the following
 
 ## 🧪 Getting Started
-
+```text
 1️ Clone the Repository
 bash
 git clone https://github.com/your-username/Insurance-Quote-Comparison.git
 cd Qoute_Comparison_Bot
+
 2️ Create Virtual Environment
 bash
 python -m venv venv
@@ -96,13 +97,15 @@ On Windows:
 venv\Scripts\activate
 On macOS/Linux:
 source venv/bin/activate
+
 3️ Install Dependencies
 bash
 pip install -r requirements.txt
+
 4️ Run the Application
 bash
 python main.py
-
+```
 ## 🛡️ Guardrails & Safety
 Responses are grounded in retrieved policy text (RAG) to minimize hallucinations
 All user and AI interactions are logged for traceability
