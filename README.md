@@ -32,33 +32,54 @@ A comprehensive collection of AI-powered insurance technology solutions demonstr
 ```text
 Demo_Project/
 │
-├── UNDERWRITING_ASSISTANT/
-│   ├── app.py                 # Main Streamlit application
-│   ├── underwriting_ai.py     # Risk analysis engine
-│   ├── pdf_utils.py           # Document processing utilities
-│   ├── schemas.py             # Risk assessment schemas
-│   ├── requirements.txt       # Python dependencies
-│   └── README.md              # Detailed documentation
+|__Insurance-Claims-Intelligence/
+├── app.py                    # 🚀 Main        
+├── requirements.txt          # 📦 Python dependencies (just 6 packages)
+├── README.md                 # 📚 This documentation
+├── .gitignore                # 🔒 Git security config
+├── .env.example              # ⚙️ Environment template
 │
-├── CLAIMS_ASSISTANT/
-│   ├── app.py                 # Claims processing interface
-│   ├── claims_ai.py           # Fraud detection & routing logic
-│   ├── document_processor.py  # Claims document analysis
-│   ├── schemas.py             # Claims processing schemas
-│   ├── requirements.txt       # Python dependencies
-│   └── README.md              # Detailed documentation
+├── logs/                    # 📊 Auto-generated (gitignored)
+│   └── audit_logs.csv       # 🔍 Every interaction logged here
 │
-└── INSURTECH_AI_AGENT/
-    ├── app.py                 # Multi-agent interface
-    ├── agents/                # Specialized AI agents
-    │   ├── underwriter_agent.py
-    │   ├── claims_agent.py
-    │   └── customer_agent.py
-    ├── rag_engine.py          # Retrieval-Augmented Generation
-    ├── workflows.py           # Business process orchestrator
-    ├── schemas.py             # Multi-agent schemas
-    ├── requirements.txt       # Python dependencies
-    └── README.md              # Detailed documentation
+└── assets/                  # 🎨 Static files (optional)
+|
+|__Qoute_Comparison_Bot/
+│
+├── main.py                     # Application entry point
+├── chatbot.py                  # User interaction & chat logic
+│
+├── logic/
+│   ├── quote_input.py          # Quote ingestion & validation
+│   └── quote_comparison.py     # Comparison and scoring logic
+│
+├── llm/
+│   └── explainer_with_memory.py # AI explanation + conversation memory
+│
+├── rag/
+│   ├── ingest_chroma.py        # PDF ingestion into vector DB
+│   └── retriever_chroma.py     # Context retrieval for LLM
+│
+├── data/
+│   └── Oriental_Mediclaim_Policy.pdf  # Sample insurance document
+│
+├── logs/
+│   └── audit_logs.csv          # User & AI interaction logs
+│
+├── .env                        # Environment variables (not committed)
+├── .gitignore
+└── README.md
+│
+└──
+└── underwriting-assistant-pdf/
+│
+├── app.py                 # Streamlit UI and application flow
+├── underwriting_ai.py     # Azure OpenAI integration and reasoning
+├── pdf_utils.py           # PDF extraction and text processing
+├── schemas.py             # Pydantic models for output validation
+├── requirements.txt       # Python dependencies
+├── .env                   # Environment configuration (git-ignored)
+└── .gitignore            # Security and environment exclusions             
 ```
 ## System Comparison Matrix
 ```text
